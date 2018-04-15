@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "hmr": "ng serve --hmr -e=hmr",
-    "build": "ng build --prod",
+    "build": "ng build",
+    "build:prod": "ng build --prod --build-optimizer --vendor-chunk --common-chunk",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

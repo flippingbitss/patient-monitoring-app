@@ -1,0 +1,23 @@
+.loginContainer {
+  margin-top: 3em;
+  .title{
+      text-align: center;
+  }
+  .box {
+    padding: 2em;
+  }
+}
+
+.label {
+  font-weight: normal;
+}
+
+.inputContainer {
+    margin-bottom: 10px;
+}
+.buttonContainer {
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 0;
+  background-color: purple;
+}
