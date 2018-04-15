@@ -1,0 +1,36 @@
+$primary-color: purple;
+
+.main-container{
+    margin-top: 20px;
+    padding: 2erm;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.inner{
+    margin-bottom: 0;
+}
+.title{
+    font-size: 4rem;
+}
+.list-items{
+  
+        padding-top: 0;
+        padding-bottom: 0;
+    
+}
+
+.create-tip-button{
+    border-color: $primary-color;
+    border-radius: 0;
+}
+.create-patient-button{
+    background-color: $primary-color;
+    border-radius: 0;
+}
+.labelTip{
+    font-weight: 0;
+    color:black;
+}
+.image-profile{
+    
+}

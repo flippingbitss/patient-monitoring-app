@@ -7,6 +7,7 @@ import { CoreModule } from "./core";
 import { SharedModule } from "./shared";
 import { AppRoutingModule } from "./app-routing.module";
 import { EntryModule } from "./entry/entry.module";
+import { SecureModule } from "@app/secure/secure.module";
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { EntryModule } from "./entry/entry.module";
     // core and shared
     CoreModule,
     SharedModule,
+    SecureModule,
 
     EntryModule,
 
