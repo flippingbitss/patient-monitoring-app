@@ -1,3 +1,18 @@
-<p>
-  register works!
-</p>
+<app-header> </app-header>
+<h3 class="title is-3 has-text-centered">Registration</h3>
+<div class="tabs is-centered  is-medium">
+  <ul>
+    <li [ngClass]="{'is-active': selectedTab == tabs.Patient}">
+      <a (click)="selectTab(tabs.Patient)">Patient</a>
+    </li>
+    <li [ngClass]="{'is-active': selectedTab == tabs.Nurse}">
+      <a (click)="selectTab(tabs.Nurse)">Nurse</a>
+    </li>
+  </ul>
+</div>
+<div>
+
+  <register-nurse *ngIf="selectedTab == tabs.Nurse"></register-nurse>
+  <register-patient *ngIf="selectedTab == tabs.Patient"></register-patient>
+
+</div>

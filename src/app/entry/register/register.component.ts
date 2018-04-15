@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
+enum Tab {
+  Patient = 1,
+  Nurse
+}
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.sass']
+  selector: "app-register",
+  templateUrl: "./register.component.html",
+  styleUrls: ["./register.component.scss"]
 })
 export class RegisterComponent implements OnInit {
+  tabs = Tab;
 
-  constructor() { }
+  selectedTab: Tab = Tab.Patient;
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  selectTab(tab: Tab) {
+    this.selectedTab = tab;
   }
-
 }
