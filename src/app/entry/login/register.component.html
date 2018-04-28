@@ -1,5 +1,5 @@
 <app-header> </app-header>
-
+<h3 class="title is-3 has-text-centered">Registration</h3>
 <div class="tabs column is-centered is-half is-offset-one-quarter is-medium">
   <ul>
     <li [ngClass]="{'is-active': selectedTab == tabs.Patient}">
@@ -12,7 +12,7 @@
 </div>
 <div>
 
-  <login-nurse *ngIf="selectedTab == tabs.Nurse"></login-nurse>
-  <login-patient *ngIf="selectedTab == tabs.Patient"></login-patient>
+  <register-nurse *ngIf="selectedTab == tabs.Nurse"></register-nurse>
+  <register-patient *ngIf="selectedTab == tabs.Patient"></register-patient>
 
 </div>

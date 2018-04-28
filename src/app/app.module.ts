@@ -10,6 +10,7 @@ import { EntryModule } from "./entry/entry.module";
 import { SecureModule } from "@app/secure/secure.module";
 import { ModalDialogModule } from 'ngx-modal-dialog';
 import { NgxSmartModalModule } from "ngx-smart-modal";
+import { UserService } from "@app/entry/user-service";
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import { NgxSmartModalModule } from "ngx-smart-modal";
     NgxSmartModalModule.forRoot()
   ],
   declarations: [AppComponent],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

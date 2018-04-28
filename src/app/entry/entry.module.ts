@@ -6,6 +6,8 @@ import { SharedModule } from "@app/shared";
 import { EntryRoutingModule } from "@app/entry/entry-routing.module";
 import { RegisterNurseComponent } from "@app/entry/register-nurse";
 import { RegisterPatientComponent } from "@app/entry/register-patient";
+import { LoginNurseComponent } from './login-nurse/login-nurse.component';
+import { LoginPatientComponent } from './login-patient/login-patient.component';
 
 @NgModule({
   imports: [CommonModule, SharedModule, EntryRoutingModule],
@@ -13,7 +15,9 @@ import { RegisterPatientComponent } from "@app/entry/register-patient";
     LoginComponent,
     RegisterComponent,
     RegisterNurseComponent,
-    RegisterPatientComponent
+    RegisterPatientComponent,
+    LoginNurseComponent,
+    LoginPatientComponent,
   ]
 })
 export class EntryModule {}
