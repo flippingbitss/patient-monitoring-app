@@ -1,0 +1,40 @@
+$primary-color: purple;
+
+.main-container{
+    margin-top: 20px;
+    padding: 2erm;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.outer-container{
+    margin-bottom: 10px;
+}
+.inner{
+    margin-bottom: 0;
+
+}
+.inner-level{
+    padding: 4rem;
+}
+.title{
+    font-size: 4rem;
+}
+.list-items{
+  
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+.labelBack{
+    margin-left: 150px;
+    margin-top:160px;
+}
+
+.patient-detail-container{
+    flex:1;
+}
+.temp
+{
+    height: 55px;
+    width: 30px;
+}

@@ -13,7 +13,8 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
     CommonModule,
     SharedModule,
     ModalDialogModule,
-    NgxSmartModalModule.forChild()
+    NgxSmartModalModule.forChild(),
+    
   ],
   declarations: [SecureHomeComponent,HomeHeaderComponent, CreateTipComponent, PatientDetailComponent]
 })

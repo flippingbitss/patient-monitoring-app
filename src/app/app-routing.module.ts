@@ -4,6 +4,7 @@ import { LoginComponent } from "@app/entry/login";
 import { RegisterComponent } from "@app/entry/register";
 import { SecureHomeComponent } from "@app/secure/secure-home/secure-home.component";
 import { CreateTipComponent } from "@app/secure/create-tip/create-tip.component";
+import { PatientDetailComponent } from "@app/secure/patient-detail/patient-detail.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:"create-tip",
     component:CreateTipComponent
+  },
+  {
+    path:"patient-detail",
+    component:PatientDetailComponent
   }
 ];
 

@@ -16,8 +16,9 @@ export class SecureHomeComponent implements OnInit  {
   ngOnInit() {
   }
 
-  dialogInit(){
+  dialogInit(){  }
 
+  viewDetail(){
+    this.router.navigate(['/patient-detail']);
   }
-
   }
