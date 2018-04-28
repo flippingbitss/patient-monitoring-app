@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from "@angular/router";
 @Component({
   selector: 'login-nurse',
   templateUrl: './login-nurse.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginNurseComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,) { }
 
   ngOnInit() {
   }
-
+  loginClick(){
+    this.router.navigate(["/secure-home"]);
+  }
 }
