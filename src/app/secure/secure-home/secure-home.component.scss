@@ -38,3 +38,24 @@ $primary-color: purple;
 .image-profile{
     
 }
+
+.tipContainer{
+    margin-top: 2rem;
+    margin-right: 1rem;
+  .title{
+      text-align: center;
+  }
+ 
+}
+
+.label {
+    font-weight: normal;
+  }
+  
+  .inputContainer {
+      margin-bottom: 10px;
+      width:25em;
+      .inputBloodPL{
+          margin-bottom: 10px;
+      }
+  }

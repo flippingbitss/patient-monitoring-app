@@ -1,5 +1,68 @@
 <home-header></home-header>
 
+<!-- Tip Modal -->
+<ngx-smart-modal #tipModal identifier="tipModal">
+    <label class="label">Daily Tip</label>
+    <div class="container tipContainer">
+        <div class="column">
+            <div class="field inputContainer">
+                <label class="label">Title</label>
+                <div class="control">
+                    <input class="input is-primary" type="text" name="tipTitle">
+                </div>
+            </div>
+            <div class="field inputContainer">
+                <label class="label">Message</label>
+                <div class="control">
+                    <textarea class="textarea is-primary"></textarea>
+                </div>
+            </div>
+            <a class="button is-primary buttonContainer" (click)="loginClick()">Send Daily Tip</a>
+        </div>
+    </div>
+</ngx-smart-modal>
+<!-- Patient Modal -->
+<ngx-smart-modal #patientModal identifier="patientModal">
+    <label class="label">Enter Patient Info</label>
+    <div class="container tipContainer">
+        <div class="column">
+            <div class="field inputContainer">
+                <label class="label">Patient Name</label>
+                <div class="control">
+                    <input class="input is-primary" type="text" name="patientName">
+                </div>
+            </div>
+
+            <div class="field inputContainer">
+                <label class="label">Blood Pressure</label>
+                <div class="control">
+                    <input class="input is-primary inputBloodPL" type="text" name="low">
+                    <input class="input is-primary" type="text" name="high">
+                </div>
+            </div>
+            <div class="field inputContainer">
+                <label class="label">Body Temperature</label>
+                <div class="control">
+                    <input class="input is-primary" type="text" name="bodyTemp">
+                </div>
+            </div>
+            <div class="field inputContainer">
+                <label class="label">Heart Rate</label>
+                <div class="control">
+                    <input class="input is-primary" type="text" name="tipTitle">
+                </div>
+            </div>
+            <div class="field inputContainer">
+                    <label class="label">Respiratory Rate</label>
+                    <div class="control">
+                        <input class="input is-primary" type="text" name="respiratoryRate">
+                    </div>
+                </div>
+            <a class="button is-primary buttonContainer" (click)="loginClick()">Enter Patient Info</a>
+        </div>
+    </div>
+</ngx-smart-modal>
+
 <div class="main-container">
     <div class="inner columns is-centered">
         <div class="column is-10">
@@ -29,14 +92,14 @@
                     <div>
                         <div class="columns">
                             <div class="column">
-                                <a class="button is-primary is-outlined create-tip-button is-block">
-                                    <label class="labelTip">Create New Tip</label>
+                                <a class="button is-primary is-outlined create-tip-button is-block" (click)="tipModal.open()">
+                                    <label class="labelTip" data-toggle="modal">Create New Tip</label>
                                 </a>
                             </div>
                         </div>
                         <div class="columns">
                             <div class="column">
-                                <a class="button is-primary create-patient-button is-block">Create Patient Information</a>
+                                <a class="button is-primary create-patient-button is-block"(click)="patientModal.open()">Enter Patient Information</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +108,7 @@
         </div>
 
     </div>
-   
+
     <div class="columns is-centered">
         <div class="column is-10 list-items">
             <!-- header -->
@@ -59,16 +122,19 @@
             </div>
             <!-- values list items -->
             <div class="columns is-vcentered box is-gapless is-marginless">
-                    <div class="column">
-                        <figure class="image is-64x64 image-profile">
-                            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-                        </figure></div>
-                    <div class="column">Sarah Nicole</div>
-                    <div class="column">Dr.James</div>
-                    <div class="column">Apr 12, 2018</div>
-                    <div class="column">Jun 11, 2018</div>
-                    <div class="column"><a class="button is-primary create-patient-button">View Details</a></div>
+                <div class="column">
+                    <figure class="image is-64x64 image-profile">
+                        <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                    </figure>
                 </div>
+                <div class="column">Sarah Nicole</div>
+                <div class="column">Dr.James</div>
+                <div class="column">Apr 12, 2018</div>
+                <div class="column">Jun 11, 2018</div>
+                <div class="column">
+                    <a class="button is-primary create-patient-button">View Details</a>
+                </div>
+            </div>
         </div>
     </div>
 
