@@ -38,3 +38,17 @@ $primary-color: purple;
     height: 55px;
     width: 30px;
 }
+.vitalContainer{
+    margin-top: 2rem;
+    margin-right: 1rem;
+  .title{
+      text-align: center;
+  }
+}
+.inputContainer {
+    margin-bottom: 10px;
+    width:25em;
+    .inputBloodPL{
+        margin-bottom: 10px;
+    }
+}

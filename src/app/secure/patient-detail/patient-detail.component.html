@@ -1,4 +1,38 @@
 <home-header></home-header>
+<!-- Update Patient Vital Information Modal -->
+<ngx-smart-modal #updateVitalModal identifier="updateVitalModal">
+    <label class="label">Update Vital Info</label>
+    <div class="container vitalContainer">
+        <div class="column">
+            <div class="field inputContainer">
+                <label class="label">Blood Pressure</label>
+                <div class="control">
+                    <input class="input is-primary inputBloodPL" type="text" name="low">
+                    <input class="input is-primary" type="text" name="high">
+                </div>
+            </div>
+            <div class="field inputContainer">
+                <label class="label">Body Temperature</label>
+                <div class="control">
+                    <input class="input is-primary" type="text" name="bodyTemp">
+                </div>
+            </div>
+            <div class="field inputContainer">
+                <label class="label">Heart Rate</label>
+                <div class="control">
+                    <input class="input is-primary" type="text" name="tipTitle">
+                </div>
+            </div>
+            <div class="field inputContainer">
+                    <label class="label">Respiratory Rate</label>
+                    <div class="control">
+                        <input class="input is-primary" type="text" name="respiratoryRate">
+                    </div>
+                </div>
+            <a class="button is-primary buttonContainer" (click)="loginClick()">Update Info</a>
+        </div>
+    </div>
+</ngx-smart-modal>
 
 <label class="labelBack">Back to Dashboard</label>
 <div class="main-container">
@@ -49,7 +83,7 @@
             </div>
             <div class="columns">
               <div class="column">
-                <a class="button is-primary create-patient-button is-block" (click)="patientModal.open()">Update Vital Information</a>
+                <a class="button is-primary create-patient-button is-block" (click)="updateVitalModal.open()">Update Vital Information</a>
               </div>
             </div>
           </div>
@@ -96,10 +130,10 @@
       </div>
       <div class="columns box is-gapless is-marginless">
         <div class="column"></div>
-        <div class="column">Patient Name</div>
-        <div class="column">Primary Doctor</div>
-        <div class="column">Next Visit</div>
-        <div class="column">Last Update</div>
+        <div class="column">Blood Pressure</div>
+        <div class="column">Body Temperature</div>
+        <div class="column">Heart Rate</div>
+        <div class="column">Respiratory Rate</div>
         <div class="column"></div>
       </div>
     </div>
