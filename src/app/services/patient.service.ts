@@ -4,9 +4,9 @@ import { Http, Headers, Response } from "@angular/http";
 import {User} from "@app/entities/User";
 import {Tip} from "@app/entities/Tip";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Router, ROUTES} from "@angular/router";
+import {Router} from "@angular/router";
 
-const ROUTES = {
+const Routes = {
   auth: {
     login: "auth/login",
     register: "auth/register"
@@ -41,7 +41,7 @@ export class PatientService {
     });
 
     return this.http
-      .get(this.getApiUrl(ROUTES.allTips), { headers })
+      .get(this.getApiUrl(Routes.allTips), { headers })
       .catch(this.handleErrorObservable);
   }
 
