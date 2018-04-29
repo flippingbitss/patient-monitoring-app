@@ -10,10 +10,20 @@ input.input {
   border: 1px solid #f1f1f1;
 }
 
+.loader {
+  width: 3em;
+  height: 3em;
+  border-width: 3px;
+}
+
 .box{
   border-radius: 0;
 }
 
 .center-children{
   align-self: center;
+}
+
+.with-margin-20{
+  margin: 20px;
 }

@@ -33,7 +33,7 @@ const routes: Routes = [
     component:CreateTipComponent
   },
   {
-    path:"patient-detail",
+    path:"patient-detail/:id",
     component:PatientDetailComponent
   },
   {

@@ -7,11 +7,13 @@ import { ModalDialogModule } from 'ngx-modal-dialog';
 import { SharedModule } from '@app/shared';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { PatientDetailComponent } from './patient-detail/patient-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
+    ReactiveFormsModule,
     ModalDialogModule,
     NgxSmartModalModule.forChild(),
   ],
