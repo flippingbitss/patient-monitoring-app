@@ -12,6 +12,7 @@ import { EntryModule } from "./entry/entry.module";
 import { SharedModule } from "./shared";
 import { ModalDialogModule } from 'ngx-modal-dialog';
 import { PatientModule } from "@app/patient/patient.module";
+import { PatientService } from "@app/services/patient.service";
 
 // import { DashboardComponent } from './patient/dashboard/dashboard.component';
 
@@ -31,7 +32,10 @@ import { PatientModule } from "@app/patient/patient.module";
     HttpClientModule,
   ],
   declarations: [AppComponent],
-  providers: [UserService],
+  providers: [
+    UserService,
+    PatientService
+  ],
   bootstrap: [AppComponent]
 })
 

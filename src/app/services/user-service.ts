@@ -7,6 +7,7 @@ import { HttpParamsOptions } from "@angular/common/http/src/params";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import { tap } from "rxjs/operators";
+import {Response} from "@angular/http";
 
 const ROUTES = {
   auth: {
@@ -26,7 +27,6 @@ const httpOptions = {
 @Injectable()
 export class UserService {
   private KEY_USER = "key_user_pma";
-
   private API_BASE_URL = "https://pma-web-api.herokuapp.com/api/";
 
   constructor(private http: HttpClient, private router: Router) {

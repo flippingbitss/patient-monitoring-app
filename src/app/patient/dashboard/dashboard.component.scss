@@ -31,6 +31,24 @@
   margin-top: 20px;
 }
 
+.p-tips > .p-tip{
+  border-bottom: solid 1px #f4f4f4;
+  padding: 20px 0 40px 0;
+}
+
+.p-tips > .p-tip > h2{
+  font-size: 16px;
+}
+
+.p-tips > .p-tip > p{
+  font-size: 12px;
+}
+
+.p-tips > .p-tip > span{
+  color: #a8a8a8;
+  font-size: 11px;
+}
+
 .p-modal{
   padding: 30px 60px;
 }
