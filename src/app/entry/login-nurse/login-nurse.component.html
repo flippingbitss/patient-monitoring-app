@@ -19,8 +19,9 @@
         </div>
       </div>
 
-      <button class="button is-primary buttonContainer"  type="submit">Login</button>
+      <button class="button is-primary buttonContainer" type="submit">Login</button>
     </div>
+    <div *ngIf="error"><p class="has-text-danger">{{error}}</p></div>
   </div>
 </div>
 </form>

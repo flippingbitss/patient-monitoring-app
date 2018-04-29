@@ -17,6 +17,8 @@ export class LoginNurseComponent implements OnInit {
     this.createForm();
   }
 
+  error:String;
+
   ngOnInit() {}
 
   private createForm() {
@@ -31,7 +33,10 @@ export class LoginNurseComponent implements OnInit {
     user.role = "nurse";
     this._userService.login(user).subscribe(res => {
       console.log(res);
+  
       this.router.navigate(['secure-home']);
+    },error=>{
+      this.error = error
     });
   }
 }

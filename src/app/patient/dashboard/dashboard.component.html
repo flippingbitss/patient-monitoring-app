@@ -89,9 +89,18 @@
           </ul>
         </div>
         <div class="p-tips">
-          <p>Strep throat is inflammation of the throat, tonsils and lymph nodes due to infection with group A streptococcus bacteria. Strep throat is very common during the flu seasons and it can be preceded by mild symptoms such as runny nose, sneezing or cough… </p>
-          <a class="is-link is-pulled-right">View more tips</a>
+          <div class="p-tip">
+            <h2 class="subtitle">{{tips[0].title}}</h2>
+            <p>{{tips[0].message}}</p>
+            <span class="is-pulled-right">{{tips[0].created.substr(0, 10)}}</span>
+          </div>
+          <div class="p-tip">
+            <h2 class="subtitle">{{tips[1].title}}</h2>
+            <p>{{tips[1].message}}</p>
+            <span class="is-pulled-right">{{tips[1].created.substr(0, 10)}}</span>
+          </div>
         </div>
+        <a class="button is-info" (click)="ngxSmartModalService.getModal('allTipsModal').open()">View more tips</a>
       </div>
     </div>
   </div>
@@ -172,5 +181,17 @@
         </ul>
     </div>
     <button class="button is-primary">Send Checklist to Doctor</button>
+  </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal [escapable]="false" [dismissable]="false" #allTipsModal identifier="allTipsModal">
+  <div class="p-modal">
+    <div class="p-tips" *ngFor="let tip of tips">
+      <div class="p-tip">
+        <h2 class="subtitle is-small">{{tip.title}}</h2>
+        <p>{{tip.message}}</p>
+        <span class="is-pulled-right">{{tip.created.substr(0, 10)}}</span>
+      </div>
+    </div>
   </div>
 </ngx-smart-modal>
