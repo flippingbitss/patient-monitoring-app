@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
-import { UserService } from "@app/entry/user-service";
+import { UserService } from "@app/services/user-service";
+import { FormGroup, FormBuilder } from "@angular/forms";
+import { User } from "@app/entities/User";
 
 
 @Component({
@@ -8,11 +10,40 @@ import { UserService } from "@app/entry/user-service";
   styleUrls: ["./register.component.scss"]
 })
 export class RegisterComponent implements OnInit {
-  
-  constructor(private _userService : UserService) {
-  
+
+
+  registerFormGroup : FormGroup;
+
+  waitingResponse: number = 0;
+  successfulMessages: string[] = [];
+  errorMessages: string[] = [];
+
+  constructor(private _userService : UserService, private formBuilder: FormBuilder) {
+    this.createForm();
   }
 
   ngOnInit() {}
 
+  createForm(){
+    this.registerFormGroup = this.formBuilder.group({
+      firstName: '',
+      lastName:'',
+      email:'',
+      dob:'',
+      password:'',
+      confirmPassword:''
+    });
+  }
+  
+  OnSubmit() {
+    console.log(this.registerFormGroup.value);
+  
+
+    const user = this.registerFormGroup.value as User;
+
+
+    this._userService.register(user).subscribe(response => {
+      console.log(response);
+    })
+  }
 }

@@ -1,16 +1,14 @@
-import { BrowserModule } from "@angular/platform-browser";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
- 
-import { AppComponent } from "./app.component";
-
-import { CoreModule } from "./core";
-import { SharedModule } from "./shared";
-import { AppRoutingModule } from "./app-routing.module";
-import { EntryModule } from "./entry/entry.module";
+import { BrowserModule } from "@angular/platform-browser";
 import { SecureModule } from "@app/secure/secure.module";
-import { ModalDialogModule } from 'ngx-modal-dialog';
+import { UserService } from "@app/services/user-service";
 import { NgxSmartModalModule } from "ngx-smart-modal";
-import { UserService } from "@app/entry/user-service";
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { CoreModule } from "./core";
+import { EntryModule } from "./entry/entry.module";
+import { SharedModule } from "./shared";
 
 @NgModule({
   imports: [
@@ -21,7 +19,8 @@ import { UserService } from "@app/entry/user-service";
     SecureModule,
     EntryModule,
     AppRoutingModule,
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+    HttpClientModule
   ],
   declarations: [AppComponent],
   providers: [UserService],

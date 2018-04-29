@@ -1,52 +1,56 @@
 <app-header> </app-header>
 
 <div class="container loginContainer">
-    <h3 class="title is-3">Patient Registration</h3>
-    <div class="column is-one-third is-offset-one-third">
+  <h3 class="title is-3">Patient Registration</h3>
+  <div class="column is-one-third is-offset-one-third">
+    <form (ngSubmit)="OnSubmit()" [formGroup]="registerFormGroup">
       <div class="box">
         <!-- First Name -->
         <div class="field inputContainer">
           <label class="label">First Name</label>
           <div class="control">
-            <input class="input" type="text" name="fistName">
+            <input class="input" type="text" name="fistName" required formControlName="firstName" >
           </div>
         </div>
         <!-- Last Name -->
         <div class="field inputContainer">
           <label class="label">Last Name</label>
           <div class="control">
-            <input class="input" type="text" name="lastName">
+            <input class="input" type="text" name="lastName" required formControlName="lastName">
           </div>
         </div>
         <!-- DOB-->
         <div class="field inputContainer">
           <label class="label">Date of Birth</label>
           <div class="control">
-            <input class="input" type="text" name="dob" placeholder="YYYY-MM-DD">
+            <input class="input" type="text" name="dob" placeholder="YYYY-MM-DD" required formControlName="dob">
           </div>
         </div>
         <!-- Email -->
         <div class="field inputContainer">
           <label class="label">Account Email</label>
           <div class="control">
-            <input class="input" type="text" name="email">
+            <input class="input" type="text" name="email" required formControlName="email">
           </div>
         </div>
         <!-- Password -->
         <div class="field inputContainer">
           <label class="label">Password</label>
           <div class="control">
-            <input class="input" type="password">
+            <input class="input" type="password" required formControlName="password">
           </div>
         </div>
         <!-- Confirm Password -->
         <div class="field inputContainer">
           <label class="label">Confirm Password</label>
           <div class="control">
-            <input class="input" type="password">
+            <input class="input" type="password" required formControlName="confirmPassword">
           </div>
         </div>
-        <a class="button is-primary buttonContainer">Register</a>
+        <button class="button is-primary buttonContainer" type="submit" >Register</button>
       </div>
-    </div>
+    </form>
+
+    <pre>{{registerFormGroup.value | json}}</pre>
   </div>
+</div>

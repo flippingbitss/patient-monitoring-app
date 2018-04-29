@@ -6,9 +6,10 @@ import { SharedModule } from "@app/shared";
 import { EntryRoutingModule } from "@app/entry/entry-routing.module";
 import { LoginNurseComponent } from './login-nurse/login-nurse.component';
 import { LoginPatientComponent } from './login-patient/login-patient.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
-  imports: [CommonModule, SharedModule, EntryRoutingModule],
+  imports: [CommonModule, SharedModule, ReactiveFormsModule, EntryRoutingModule],
   declarations: [
     LoginComponent,
     RegisterComponent,
