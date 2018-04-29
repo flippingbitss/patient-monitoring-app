@@ -10,7 +10,7 @@ import { Visit } from "@app/entities/Visit";
   styleUrls: ["./patient-detail.component.scss"]
 })
 export class PatientDetailComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private userService: UserService) {}
+  constructor(private route: ActivatedRoute, private userService: UserService,private router:Router) {}
 
   isLoading = true;
   user: User;
@@ -32,5 +32,8 @@ export class PatientDetailComponent implements OnInit {
 
       this.isLoading = false;
     });
+  }
+  backToDashboard(){
+    this.router.navigate(['/secure-home']);
   }
 }

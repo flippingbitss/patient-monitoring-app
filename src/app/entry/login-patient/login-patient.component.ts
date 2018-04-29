@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { UserService } from "@app/services/user-service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { EmailValidator } from '@angular/forms';
+import { EmailValidator } from "@angular/forms";
 
 @Component({
   selector: "login-patient",
@@ -23,14 +23,14 @@ export class LoginPatientComponent implements OnInit {
 
   private createForm() {
     this.loginFormGroup = this.formBuilder.group({
-      email: ["", Validators.required, Validators.email],
-      password: ["", Validators.required, Validators.minLength(8)]
+      email: "",
+      password: ""
     });
   }
 
   error: String;
   public onSubmit() {
-    if (!this.loginFormGroup.valid) return;
+    // if (!this.loginFormGroup.valid) return;
 
     const user = this.loginFormGroup.value;
 
