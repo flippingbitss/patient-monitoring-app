@@ -11,8 +11,9 @@ import { CoreModule } from "./core";
 import { EntryModule } from "./entry/entry.module";
 import { SharedModule } from "./shared";
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import { PatientModule } from "@app/patient/patient.module";
 
-import { DashboardComponent } from './patient/dashboard/dashboard.component';
+// import { DashboardComponent } from './patient/dashboard/dashboard.component';
 
 
 
@@ -21,6 +22,7 @@ import { DashboardComponent } from './patient/dashboard/dashboard.component';
     BrowserModule,
     // core and shared
     CoreModule,
+    PatientModule,
     SharedModule,
     SecureModule,
     EntryModule,
@@ -28,7 +30,7 @@ import { DashboardComponent } from './patient/dashboard/dashboard.component';
     NgxSmartModalModule.forRoot(),
     HttpClientModule,
   ],
-  declarations: [AppComponent, DashboardComponent],
+  declarations: [AppComponent],
   providers: [UserService],
   bootstrap: [AppComponent]
 })
