@@ -3,5 +3,5 @@ export class Vitals {
     bloodMax: number;
     temperature: number;ƒ
     heartRate: number;
-    respRate: number;
+    respiratoryRate: number;
 }

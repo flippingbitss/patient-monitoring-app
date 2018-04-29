@@ -1,6 +1,7 @@
 import { Visit } from "@app/entities/Visit";
 
 export class User {
+  id: string;
   firstName: string;
   lastName: string;
   email: string;

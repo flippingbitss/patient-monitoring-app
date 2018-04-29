@@ -36,36 +36,36 @@
 </ngx-smart-modal>
 <!-- Patient Modal -->
 <ngx-smart-modal [escapable]="false" [dismissable]="false" #patientModal identifier="patientModal">
-  <div class="p-modal">
-    <h1 class="title is-size-4">Enter Patient Info</h1>
+  <form (ngSubmit)="addVisit()" [formGroup]="addVisitForm" class="p-modal">
+    <h1 class="title is-size-4">Enter Visit Info</h1>
 
     <div class="field">
       <label class="label">Blood Pressure</label>
       <div class="control">
-        <input class="input" type="text" placeholder="low blood pressure">
-        <input class="input" type="text" placeholder="high blood pressure">
+        <input class="input" type="text" formControlName="bloodMin" placeholder="low blood pressure">
+        <input class="input" type="text" formControlName="bloodMax" placeholder="high blood pressure">
       </div>
     </div>
     <div class="field">
       <label class="label">Body Temperature</label>
       <div class="control">
-        <input class="input" type="text" placeholder="">
+        <input class="input" formControlName="temperature" type="text" placeholder="">
       </div>
     </div>
     <div class="field">
       <label class="label">Heart Rate</label>
       <div class="control">
-        <input class="input" type="text" placeholder="">
+        <input class="input" formControlName="heartRate" type="text" placeholder="">
       </div>
     </div>
     <div class="field">
       <label class="label">Respiratory Rate</label>
       <div class="control">
-        <input class="input" type="text" placeholder="">
+        <input class="input"formControlName="respiratoryRate"type="text" placeholder="">
       </div>
     </div>
-    <button class="button is-primary">Enter Patient Info</button>
-  </div>
+    <button class="button is-primary" type="submit">Enter Visit Info</button>
+  </form>
 </ngx-smart-modal>
 
 <label class="labelBack">Back to Dashboard</label>
@@ -177,7 +177,7 @@
             <figure class="image is-64x64 ">
               <img src="../../../assets/icons/icon_respiratory rate.png">
             </figure>
-            <p class="has-text-weight-light title">{{lastVisit?.vitals.respRate}}</p>
+            <p class="has-text-weight-light title">{{lastVisit?.vitals.respiratoryRate}}</p>
             <p class="heading is-size-6">Respiratory Rate</p>
           </div>
         </div>

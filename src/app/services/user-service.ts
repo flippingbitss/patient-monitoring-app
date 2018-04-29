@@ -8,6 +8,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import { tap } from "rxjs/operators";
 import { Tip } from "@app/entities/Tip";
+import { Visit } from "@app/entities/Visit";
 
 const ROUTES = {
   auth: {
@@ -16,7 +17,7 @@ const ROUTES = {
   },
   users: "users",
   visits: {
-    add: "visit"
+    add: "users/visit"
   },
   tips: "tips"
 };
@@ -40,6 +41,7 @@ export class UserService {
     return `${this.API_BASE_URL}${route}`;
   }
 
+  // auth
   login(user: User): Observable<User> {
     return this.http
       .post(this.getApiUrl(ROUTES.auth.login), user, httpOptions)
@@ -62,22 +64,12 @@ export class UserService {
       .catch(this.handleErrorObservable);
   }
 
-  private getAuthHeaders(token: string) {
-    return new HttpHeaders({
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`
-    });
-  }
-
-  private getToken() {
-    return JSON.parse(window.localStorage.getItem(this.KEY_USER)).token;
-  }
-
   logout(): void {
     window.localStorage.removeItem(this.KEY_USER);
     this.router.navigate(["/login"]);
   }
 
+  // users
   public getUser(id: string): Observable<User> {
     const token = this.getToken();
     return this.http
@@ -89,6 +81,14 @@ export class UserService {
     return JSON.parse(window.localStorage.getItem(this.KEY_USER)) as User;
   }
 
+  private saveUser(user: User): void {
+    if (user) {
+      return window.localStorage.setItem(this.KEY_USER, JSON.stringify(user));
+    }
+    console.error("Failed to save user to local storage - user is null");
+  }
+
+  // TIPS
   public getTips() {
     const token = this.getToken();
 
@@ -105,11 +105,25 @@ export class UserService {
       .catch(this.handleErrorObservable);
   }
 
-  private saveUser(user: User): void {
-    if (user) {
-      return window.localStorage.setItem(this.KEY_USER, JSON.stringify(user));
-    }
-    console.error("Failed to save user to local storage - user is null");
+  // visits
+  public addVisit(visit: Visit, patientId: String) {
+    const token = this.getToken();
+
+    return this.http
+      .post(this.getApiUrl(ROUTES.visits.add), {...visit, userId: patientId}, { headers: this.getAuthHeaders(token) })
+      .catch(this.handleErrorObservable);
+  }
+
+  // helpers
+  private getAuthHeaders(token: string) {
+    return new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    });
+  }
+
+  private getToken() {
+    return JSON.parse(window.localStorage.getItem(this.KEY_USER)).token;
   }
 
   private extractData(res: Response) {
