@@ -75,15 +75,15 @@
         <div class="p-links">
           <ul class="menu-list">
             <li>
-              <a>
+              <a (click)="ngxSmartModalService.getModal('emergencyAlertModal').open()">
                 <span class="icon"><i class="fas fa-bell"></i></span>
-                <span class="p-icon-link-text">Send Emergency Alert</span>
+                <span class="p-icon-link-text"  >Send Emergency Alert</span>
               </a>
             </li>
             <li>
-              <a>
+              <a (click)="ngxSmartModalService.getModal('checklistModal').open()">
                 <span class="icon"><i class="fas fa-list-ul"></i></span>
-                <span class="p-icon-link-text">Create a Checklist</span>
+                <span class="p-icon-link-text" >Create a Checklist</span>
               </a>
             </li>
           </ul>
@@ -97,3 +97,80 @@
   </div>
 </section>
 
+<ngx-smart-modal [escapable]="false" [dismissable]="false" #emergencyAlertModal identifier="emergencyAlertModal">
+  <div class="p-modal">
+    <h1 class="title">Send Emergency Alert</h1>
+    <div class="field">
+      <label class="label">To whom</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="lezhong.li@gmail.com">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Title</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Message</label>
+      <div class="control">
+        <textarea class="textarea"  class="input" type="text" placeholder="" row="4"></textarea>
+      </div>
+    </div>
+    <button class="button is-danger">Send Emergency Alert</button>
+  </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal [escapable]="false" [dismissable]="false" #checklistModal identifier="checklistModal">
+  <div class="p-modal">
+    <h1 class="title">Send Emergency Alert</h1>
+    <div>
+        <ul>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              Abdominal pain
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              Blood in stool
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              Chest Pain
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              Constipation
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              Cough
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              Difficulty swallo
+            </label>
+          </li>
+          <li>
+            <label class="checkbox">
+              <input type="checkbox">
+              Dizziness
+            </label>
+          </li>
+        </ul>
+    </div>
+    <button class="button is-primary">Send Checklist to Doctor</button>
+  </div>
+</ngx-smart-modal>
