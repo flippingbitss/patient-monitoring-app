@@ -1,79 +1,81 @@
 $primary-color: purple;
-
-.main-container{
+.main-container {
     margin-top: 20px;
     padding: 2erm;
     padding-bottom: 0;
     margin-bottom: 0;
 }
-.inner{
-    margin-bottom: 0;
 
+.inner {
+    margin-bottom: 0;
 }
-.inner-level{
+
+.inner-level {
     padding: 4rem;
 }
-.title{
+
+.title {
     font-size: 4rem;
 }
-.list-items{
-  
-        padding-top: 0;
-        padding-bottom: 0;
-    
+
+.list-items {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-.create-tip-button{
+
+.create-tip-button {
     border-color: $primary-color;
     border-radius: 0;
 }
-.create-patient-button{
+
+.create-patient-button {
     background-color: $primary-color;
     border-radius: 0;
 }
-.labelTip{
+
+.labelTip {
     font-weight: 0;
-    color:black;
+    color: black;
 }
 
-.tipContainer{
+.tipContainer {
     margin-top: 2rem;
     margin-right: 1rem;
-  .title{
-      text-align: center;
-  }
- 
+    .title {
+        text-align: center;
+    }
 }
 
 .label {
     font-weight: normal;
-  }
-  
-  .inputContainer {
-      margin-bottom: 10px;
-      width:25em;
-      .inputBloodPL{
-          margin-bottom: 10px;
-      }
-  }
+}
 
-  .p-modal{
+.inputContainer {
+    margin-bottom: 10px;
+    width: 25em;
+    .inputBloodPL {
+        margin-bottom: 10px;
+    }
+}
+
+.p-modal {
     padding: 30px 60px;
-  }
-  
-  .p-modal h5{
+}
+
+.p-modal h5 {
     padding-bottom: 20px;
-  }
-  
-  .p-modal .field{
+}
+
+.p-modal .field {
     padding: 10px 0;
-  }
-  
-  .p-modal textarea{
+}
+
+.p-modal textarea {
     height: 120px;
-  }
-  
-  .p-modal button{
+}
+
+.p-modal button {
     margin-top: 20px;
     width: 380px;
-  }
+}

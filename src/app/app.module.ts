@@ -10,13 +10,11 @@ import { AppComponent } from "./app.component";
 import { CoreModule } from "./core";
 import { EntryModule } from "./entry/entry.module";
 import { SharedModule } from "./shared";
-import { ModalDialogModule } from 'ngx-modal-dialog';
+import { ModalDialogModule } from "ngx-modal-dialog";
 import { PatientModule } from "@app/patient/patient.module";
 import { PatientService } from "@app/services/patient.service";
 
 // import { DashboardComponent } from './patient/dashboard/dashboard.component';
-
-
 
 @NgModule({
   imports: [
@@ -29,7 +27,7 @@ import { PatientService } from "@app/services/patient.service";
     EntryModule,
     AppRoutingModule,
     NgxSmartModalModule.forRoot(),
-    HttpClientModule,
+    HttpClientModule
   ],
   declarations: [AppComponent],
   providers: [
@@ -38,5 +36,4 @@ import { PatientService } from "@app/services/patient.service";
   ],
   bootstrap: [AppComponent]
 })
-
 export class AppModule {}

@@ -69,7 +69,12 @@
 </ngx-smart-modal>
 
 <label class="labelBack">Back to Dashboard</label>
-<div class="main-container">
+
+<div *ngIf="isLoading" class="columns is-centered">
+  <div class="loader with-margin-20"></div>
+</div>
+
+<div *ngIf="!isLoading" class="main-container">
   <div class="inner columns is-centered">
     <div class="column is-10">
       <div class="level box inner-level ">
@@ -82,21 +87,21 @@
         <div class="columns is-centered is-multiline">
 
           <div class="column is-12">
-            <p class="heading is-size-6">Patient Name</p>
+            <p class="is-size-6">Patient Name: {{user.firstName}} {{user.lastName}}</p>
             <!-- <p class="is-subtitle is-size-6">Software Engineering Technology</p> -->
           </div>
           <div class="column is-12">
-            <p class="is-size-6">Age</p>
+            <p class="is-size-6">DoB: {{user.dob | date}}</p>
             <!-- <p class="is-subtitle is-size-6">Software Engineering Technology</p> -->
           </div>
           <div class="column is-12">
-            <p class="is-size-6">Patient Since</p>
+            <p class="is-size-6">Patient Since: {{user.created | date}}</p>
             <!-- <p class="is-subtitle is-size-6">Software Engineering Technology</p> -->
           </div>
           <div class="column is-12">
             <p class="is-subtitle is-size-6 is-flex label-with-icon">
 
-              <a href="mailto:johndoe@my.centennialcollege.ca">johndoe@my.centennialcollege.ca</a>
+              <a href="mailto:{{user.email}}">{{user.email}}</a>
             </p>
           </div>
           <div class="column is-12">
@@ -115,62 +120,66 @@
               </div>
 
             </div>
-            <div class="columns">
-              <div class="column">
-                <a class="button is-primary create-patient-button is-block" (click)="updateVitalModal.open()">Update Vital Information</a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
     </div>
-
-
   </div>
 
 
-  <div class="columns is-centered">
+  <div *ngIf="lastVisit" class="columns is-centered">
     <div class="column is-10 list-items">
       <!-- header -->
       <div class="columns box is-gapless is-marginless">
-        <label class="label">Vital data from last visit on DATE</label>
+        <label class="label">Vital data from last visit on {{lastVisit?.date || "April 27, 2018"}}</label>
+      </div>
+
+      <div class="level vitals box inner-level">
+        <div class="level-item has-text-centered">
+          <div class="is-flex">
+            <!-- Patient Count -->
+            <figure class="image is-64x64 ">
+              <img src="../../../assets/icons/icon_blood pressure.png">
+            </figure>
+            <p class="has-text-weight-light title">{{lastVisit?.vitals.bloodMin}}{{lastVisit && "/"}}{{lastVisit?.vitals.bloodMax}}</p>
+            <p class="heading is-size-6">Blood Pressure</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div class="is-flex">
+            <!-- Patient Count -->
+            <figure class="image is-64x64 ">
+              <img src="../../../assets/icons/icon_temperature.png">
+            </figure>
+            <p class="has-text-weight-light title">{{lastVisit?.vitals.temperature}}</p>
+            <p class="heading is-size-6">Temperature</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div class="is-flex">
+            <!-- Patient Count -->
+            <figure class="image is-64x64 ">
+              <img src="../../../assets/icons/icon_heart rate.png">
+            </figure>
+            <p class="has-text-weight-light title">{{lastVisit?.vitals.heartRate}}</p>
+            <p class="heading is-size-6">Heart Rate</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div class="is-flex">
+            <!-- Patient Count -->
+            <figure class="image is-64x64 ">
+              <img src="../../../assets/icons/icon_respiratory rate.png">
+            </figure>
+            <p class="has-text-weight-light title">{{lastVisit?.vitals.respRate}}</p>
+            <p class="heading is-size-6">Respiratory Rate</p>
+          </div>
+        </div>
       </div>
       <!-- values list items -->
-      <div class="columns box is-gapless is-marginless">
-        <div class="column"></div>
-
-        <div class="column ">
-          <figure class="image is-64x64 ">
-            <img src="../../../assets/icons/icon_blood pressure.png">
-          </figure>
-        </div>
-        <div class="column">
-          <figure class="image is-48x48">
-            <img class="temp" src="../../../assets/icons/icon_temperature.png">
-          </figure>
-        </div>
-        <div class="column">
-          <figure class="image is-48x48">
-            <img src="../../../assets/icons/icon_heart rate.png">
-          </figure>
-        </div>
-        <div class="column">
-          <figure class="image is-48x48">
-            <img src="../../../assets/icons/icon_respiratory rate.png">
-          </figure>
-        </div>
-        <div class="column"></div>
-      </div>
-      <div class="columns box is-gapless is-marginless">
-        <div class="column"></div>
-        <div class="column">Blood Pressure</div>
-        <div class="column">Body Temperature</div>
-        <div class="column">Heart Rate</div>
-        <div class="column">Respiratory Rate</div>
-        <div class="column"></div>
-      </div>
     </div>
   </div>
-
-</div>
+  <div *ngIf="!lastVisit" class="columns is-centered with-margin-20">
+    <p class="message heading">No previous visits.</p>
+  </div>
