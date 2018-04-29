@@ -6,6 +6,7 @@ import { Observable } from "rxjs/Observable";
 import { HttpParamsOptions } from "@angular/common/http/src/params";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
+import 'rxjs/add/observable/throw';
 import { tap } from "rxjs/operators";
 import { Tip } from "@app/entities/Tip";
 
@@ -118,7 +119,8 @@ export class UserService {
   }
 
   private handleErrorObservable(error: Response | any) {
-    console.error(error.message || error);
-    return Observable.throw(error.message || error);
+    console.log(error.status, error.statusText,error);
+    
+    return Observable.throw(error.error.message);
   }
 }
