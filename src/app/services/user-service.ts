@@ -25,11 +25,13 @@ const httpOptions = {
 
 @Injectable()
 export class UserService {
-  private KEY_USER = "token";
+  private KEY_USER = "key_user_pma";
 
   private API_BASE_URL = "https://pma-web-api.herokuapp.com/api/";
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {
+    this.saveUser = this.saveUser.bind(this);
+  }
 
   private getApiUrl(route: string): string {
     return `${this.API_BASE_URL}${route}`;
@@ -48,13 +50,25 @@ export class UserService {
       .catch(this.handleErrorObservable);
   }
 
+  getAll(): Observable<User[]> {
+    const token = JSON.parse(window.localStorage.getItem(this.KEY_USER)).token;
+    const headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    });
+
+    return this.http
+      .get(this.getApiUrl(ROUTES.users), { headers })
+      .catch(this.handleErrorObservable);
+  }
+
   logout(): void {
     window.localStorage.removeItem(this.KEY_USER);
     this.router.navigate(["/login"]);
   }
 
   public getCurrentUser(): User {
-    return (window.localStorage.getItem(this.KEY_USER) as any) as User;
+    return JSON.parse(window.localStorage.getItem(this.KEY_USER)) as User;
   }
 
   private saveUser(user: User): void {

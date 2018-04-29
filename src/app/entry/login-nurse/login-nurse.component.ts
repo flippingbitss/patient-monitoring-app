@@ -28,10 +28,10 @@ export class LoginNurseComponent implements OnInit {
 
   public onSubmit() {
     const user = this.loginFormGroup.value;
-
+    user.role = "nurse";
     this._userService.login(user).subscribe(res => {
       console.log(res);
-      this.router.navigate(['/secure-home']);
+      this.router.navigate(['secure-home']);
     });
   }
 }

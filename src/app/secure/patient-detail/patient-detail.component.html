@@ -1,38 +1,71 @@
 <home-header></home-header>
 <!-- Update Patient Vital Information Modal -->
 <ngx-smart-modal #updateVitalModal identifier="updateVitalModal">
-    <label class="label">Update Vital Info</label>
-    <div class="container vitalContainer">
-        <div class="column">
-            <div class="field inputContainer">
-                <label class="label">Blood Pressure</label>
-                <div class="control">
-                    <input class="input is-primary inputBloodPL" type="text" name="low">
-                    <input class="input is-primary" type="text" name="high">
-                </div>
-            </div>
-            <div class="field inputContainer">
-                <label class="label">Body Temperature</label>
-                <div class="control">
-                    <input class="input is-primary" type="text" name="bodyTemp">
-                </div>
-            </div>
-            <div class="field inputContainer">
-                <label class="label">Heart Rate</label>
-                <div class="control">
-                    <input class="input is-primary" type="text" name="tipTitle">
-                </div>
-            </div>
-            <div class="field inputContainer">
-                    <label class="label">Respiratory Rate</label>
-                    <div class="control">
-                        <input class="input is-primary" type="text" name="respiratoryRate">
-                    </div>
-                </div>
-            <a class="button is-primary buttonContainer">Update Info</a>
+  <label class="label">Update Vital Info</label>
+  <div class="container vitalContainer">
+    <div class="column">
+      <div class="field inputContainer">
+        <label class="label">Blood Pressure</label>
+        <div class="control">
+          <input class="input is-primary inputBloodPL" type="text" name="low">
+          <input class="input is-primary" type="text" name="high">
         </div>
+      </div>
+      <div class="field inputContainer">
+        <label class="label">Body Temperature</label>
+        <div class="control">
+          <input class="input is-primary" type="text" name="bodyTemp">
+        </div>
+      </div>
+      <div class="field inputContainer">
+        <label class="label">Heart Rate</label>
+        <div class="control">
+          <input class="input is-primary" type="text" name="tipTitle">
+        </div>
+      </div>
+      <div class="field inputContainer">
+        <label class="label">Respiratory Rate</label>
+        <div class="control">
+          <input class="input is-primary" type="text" name="respiratoryRate">
+        </div>
+      </div>
+      <a class="button is-primary buttonContainer">Update Info</a>
     </div>
-    
+  </div>
+
+</ngx-smart-modal>
+<!-- Patient Modal -->
+<ngx-smart-modal [escapable]="false" [dismissable]="false" #patientModal identifier="patientModal">
+  <div class="p-modal">
+    <h1 class="title is-size-4">Enter Patient Info</h1>
+
+    <div class="field">
+      <label class="label">Blood Pressure</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="low blood pressure">
+        <input class="input" type="text" placeholder="high blood pressure">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Body Temperature</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Heart Rate</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="">
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Respiratory Rate</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="">
+      </div>
+    </div>
+    <button class="button is-primary">Enter Patient Info</button>
+  </div>
 </ngx-smart-modal>
 
 <label class="labelBack">Back to Dashboard</label>
@@ -76,11 +109,11 @@
         <div class="level-item has-text-centered">
           <div>
             <div class="columns">
+
               <div class="column">
-                <a class="button is-primary is-outlined create-tip-button is-block">
-                  <label class="labelTip" data-toggle="modal">Contact Patient</label>
-                </a>
+                <a class="button is-primary create-patient-button is-block" (click)="patientModal.open()">Enter Patient Information</a>
               </div>
+
             </div>
             <div class="columns">
               <div class="column">
@@ -106,7 +139,7 @@
       <!-- values list items -->
       <div class="columns box is-gapless is-marginless">
         <div class="column"></div>
-        
+
         <div class="column ">
           <figure class="image is-64x64 ">
             <img src="../../../assets/icons/icon_blood pressure.png">

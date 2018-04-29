@@ -20,45 +20,7 @@
         <button class="button is-primary">Send Daily Tip</button>
     </div>
 </ngx-smart-modal>
-<!-- Patient Modal -->
-<ngx-smart-modal [escapable]="false" [dismissable]="false" #patientModal identifier="patientModal">
-    <div class="p-modal">
-        <h1 class="title is-size-4">Enter Patient Info</h1>
-        <div class="field">
-            <label class="label">Patient Name</label>
-            <div class="control">
-                <input class="input" type="text" name="tipTitle">
-            </div>
-        </div>
 
-        <div class="field">
-            <label class="label">Blood Pressure</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="">
-                <input class="input" type="text" placeholder="">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">Body Temperature</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">Heart Rate</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">Respiratory Rate</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="">
-            </div>
-        </div>
-        <button class="button is-primary">Enter Patient Info</button>
-    </div>
-</ngx-smart-modal>
 <div class="main-container">
     <div class="inner columns is-centered">
         <div class="column is-10">
@@ -93,11 +55,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="columns">
-                            <div class="column">
-                                <a class="button is-primary create-patient-button is-block" (click)="patientModal.open()">Enter Patient Information</a>
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
@@ -105,7 +63,7 @@
 
     </div>
 
-    <div class="columns is-centered">
+    <div *ngIf="!isLoading" class="columns is-centered">
         <div class="column is-10 list-items">
             <!-- header -->
             <div class="columns box is-gapless is-marginless">
@@ -117,13 +75,15 @@
                 <div class="column"></div>
             </div>
             <!-- values list items -->
-            <div class="columns is-vcentered box is-gapless is-marginless">
+
+
+            <div  *ngFor="let user of users;" class="columns is-vcentered box is-gapless is-marginless">
                 <div class="column">
                     <figure class="image is-64x64 image-profile">
                         <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
                     </figure>
                 </div>
-                <div class="column">Sarah Nicole</div>
+                <div class="column">{{user.firstName}} {{user.lastName}}</div>
                 <div class="column">Dr.James</div>
                 <div class="column">Apr 12, 2018</div>
                 <div class="column">Jun 11, 2018</div>
@@ -131,6 +91,9 @@
                     <a class="button is-primary create-patient-button" (click)="viewDetail()">View Details</a>
                 </div>
             </div>
+
+
+
         </div>
     </div>
 
