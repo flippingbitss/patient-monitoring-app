@@ -27,7 +27,7 @@ const httpOptions = {
 export class UserService {
   private KEY_USER = "token";
 
-  private API_BASE_URL = "http://5948e99a.ngrok.io/api/";
+  private API_BASE_URL = "https://pma-web-api.herokuapp.com/api/";
 
   constructor(private http: HttpClient, private router: Router) {}
 

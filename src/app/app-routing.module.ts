@@ -7,6 +7,7 @@ import { CreateTipComponent } from "@app/secure/create-tip/create-tip.component"
 import { PatientDetailComponent } from "@app/secure/patient-detail/patient-detail.component";
 import {DashboardComponent} from "@app/patient/dashboard/dashboard.component";
 import { AuthGuard } from "@app/auth.guard";
+import { combineAll } from "rxjs/operators";
 
 const routes: Routes = [
   {
@@ -38,7 +39,8 @@ const routes: Routes = [
   {
     path:"patient",
     component:DashboardComponent
-  }
+  },
+
 ];
 
 @NgModule({

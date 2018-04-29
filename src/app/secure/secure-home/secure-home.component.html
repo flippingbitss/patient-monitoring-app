@@ -1,69 +1,64 @@
 <home-header></home-header>
 
 <!-- Tip Modal -->
-<ngx-smart-modal #tipModal identifier="tipModal">
-    <label class="label">Daily Tip</label>
-    <div class="container tipContainer">
-        <div class="column">
-            <div class="field inputContainer">
-                <label class="label">Title</label>
-                <div class="control">
-                    <input class="input is-primary" type="text" name="tipTitle">
-                </div>
+<ngx-smart-modal [escapable]="false" [dismissable]="false" #tipModal identifier="tipModal">
+    <div class="p-modal">
+        <h5 class="title is-size-4">Daily Tip</h5>
+        <div class="field">
+            <label class="label">Title</label>
+            <div class="control">
+                <input class="input" type="text" name="tipTitle">
             </div>
-            <div class="field inputContainer">
-                <label class="label">Message</label>
-                <div class="control">
-                    <textarea class="textarea is-primary"></textarea>
-                </div>
-            </div>
-            <a class="button is-primary buttonContainer" (click)="loginClick()">Send Daily Tip</a>
         </div>
+        <div class="field">
+            <label class="label">Message</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="">
+            </div>
+        </div>
+
+        <button class="button is-primary">Send Daily Tip</button>
     </div>
 </ngx-smart-modal>
-
 <!-- Patient Modal -->
-<ngx-smart-modal #patientModal identifier="patientModal">
-    <label class="label">Enter Patient Info</label>
-    <div class="container tipContainer">
-        <div class="column">
-            <div class="field inputContainer">
-                <label class="label">Patient Name</label>
-                <div class="control">
-                    <input class="input is-primary" type="text" name="patientName">
-                </div>
+<ngx-smart-modal [escapable]="false" [dismissable]="false" #patientModal identifier="patientModal">
+    <div class="p-modal">
+        <h1 class="title is-size-4">Enter Patient Info</h1>
+        <div class="field">
+            <label class="label">Patient Name</label>
+            <div class="control">
+                <input class="input" type="text" name="tipTitle">
             </div>
-
-            <div class="field inputContainer">
-                <label class="label">Blood Pressure</label>
-                <div class="control">
-                    <input class="input is-primary inputBloodPL" type="text" name="low">
-                    <input class="input is-primary" type="text" name="high">
-                </div>
-            </div>
-            <div class="field inputContainer">
-                <label class="label">Body Temperature</label>
-                <div class="control">
-                    <input class="input is-primary" type="text" name="bodyTemp">
-                </div>
-            </div>
-            <div class="field inputContainer">
-                <label class="label">Heart Rate</label>
-                <div class="control">
-                    <input class="input is-primary" type="text" name="tipTitle">
-                </div>
-            </div>
-            <div class="field inputContainer">
-                    <label class="label">Respiratory Rate</label>
-                    <div class="control">
-                        <input class="input is-primary" type="text" name="respiratoryRate">
-                    </div>
-                </div>
-            <a class="button is-primary buttonContainer" (click)="loginClick()">Enter Patient Info</a>
         </div>
+
+        <div class="field">
+            <label class="label">Blood Pressure</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="">
+                <input class="input" type="text" placeholder="">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Body Temperature</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Heart Rate</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Respiratory Rate</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="">
+            </div>
+        </div>
+        <button class="button is-primary">Enter Patient Info</button>
     </div>
 </ngx-smart-modal>
-
 <div class="main-container">
     <div class="inner columns is-centered">
         <div class="column is-10">
@@ -100,7 +95,7 @@
                         </div>
                         <div class="columns">
                             <div class="column">
-                                <a class="button is-primary create-patient-button is-block"(click)="patientModal.open()">Enter Patient Information</a>
+                                <a class="button is-primary create-patient-button is-block" (click)="patientModal.open()">Enter Patient Information</a>
                             </div>
                         </div>
                     </div>

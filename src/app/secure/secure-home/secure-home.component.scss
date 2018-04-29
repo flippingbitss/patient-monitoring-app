@@ -56,3 +56,24 @@ $primary-color: purple;
           margin-bottom: 10px;
       }
   }
+
+  .p-modal{
+    padding: 30px 60px;
+  }
+  
+  .p-modal h5{
+    padding-bottom: 20px;
+  }
+  
+  .p-modal .field{
+    padding: 10px 0;
+  }
+  
+  .p-modal textarea{
+    height: 120px;
+  }
+  
+  .p-modal button{
+    margin-top: 20px;
+    width: 380px;
+  }
