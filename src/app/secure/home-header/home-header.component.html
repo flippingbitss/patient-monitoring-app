@@ -6,9 +6,9 @@
     </div>
     <div class=" navbar-end">
       <a class="navbar-item" routerLink="/login">
-        UserName
+        {{getUsername()}}
       </a>
-      <a class="navbar-item" routerLink="/register">
+      <a class="navbar-item" (click)="logout()">
         Logout
       </a>
     </div>

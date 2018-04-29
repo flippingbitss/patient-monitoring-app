@@ -38,7 +38,6 @@ export class UserService {
   login(user: User): Observable<User> {
     return this.http
       .post(this.getApiUrl(ROUTES.auth.login), user, httpOptions)
-      .map(this.extractData)
       .pipe(tap(this.saveUser))
       .catch(this.handleErrorObservable);
   }
@@ -46,13 +45,16 @@ export class UserService {
   register(user: User): Observable<User> {
     return this.http
       .post(this.getApiUrl(ROUTES.auth.register), user, httpOptions)
-      .map(this.extractData)
       .catch(this.handleErrorObservable);
   }
 
   logout(): void {
     window.localStorage.removeItem(this.KEY_USER);
     this.router.navigate(["/login"]);
+  }
+
+  public getCurrentUser(): User {
+    return (window.localStorage.getItem(this.KEY_USER) as any) as User;
   }
 
   private saveUser(user: User): void {

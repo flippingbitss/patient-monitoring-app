@@ -11,13 +11,7 @@ import { User } from "@app/entities/User";
 })
 export class RegisterComponent implements OnInit {
 
-
   registerFormGroup : FormGroup;
-
-  waitingResponse: number = 0;
-  successfulMessages: string[] = [];
-  errorMessages: string[] = [];
-
   constructor(private _userService : UserService, private formBuilder: FormBuilder) {
     this.createForm();
   }
@@ -37,11 +31,7 @@ export class RegisterComponent implements OnInit {
   
   OnSubmit() {
     console.log(this.registerFormGroup.value);
-  
-
     const user = this.registerFormGroup.value as User;
-
-
     this._userService.register(user).subscribe(response => {
       console.log(response);
     })

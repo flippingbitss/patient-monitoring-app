@@ -5,6 +5,8 @@ import { RegisterComponent } from "@app/entry/register";
 import { SecureHomeComponent } from "@app/secure/secure-home/secure-home.component";
 import { CreateTipComponent } from "@app/secure/create-tip/create-tip.component";
 import { PatientDetailComponent } from "@app/secure/patient-detail/patient-detail.component";
+import {DashboardComponent} from "@app/patient/dashboard/dashboard.component";
+import { AuthGuard } from "@app/auth.guard";
 
 const routes: Routes = [
   {
@@ -22,7 +24,8 @@ const routes: Routes = [
   },
   {
     path:"secure-home",
-    component:SecureHomeComponent
+    component:SecureHomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:"create-tip",
@@ -31,11 +34,16 @@ const routes: Routes = [
   {
     path:"patient-detail",
     component:PatientDetailComponent
+  },
+  {
+    path:"patient",
+    component:DashboardComponent
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule {}
