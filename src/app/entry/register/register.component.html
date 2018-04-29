@@ -1,18 +1,52 @@
 <app-header> </app-header>
-<h3 class="title is-3 has-text-centered">Registration</h3>
-<div class="tabs column is-centered is-half is-offset-one-quarter is-medium">
-  <ul>
-    <li [ngClass]="{'is-active': selectedTab == tabs.Patient}">
-      <a (click)="selectTab(tabs.Patient)">Patient</a>
-    </li>
-    <li [ngClass]="{'is-active': selectedTab == tabs.Nurse}">
-      <a (click)="selectTab(tabs.Nurse)">Nurse</a>
-    </li>
-  </ul>
-</div>
-<div>
 
-  <register-nurse *ngIf="selectedTab == tabs.Nurse"></register-nurse>
-  <register-patient *ngIf="selectedTab == tabs.Patient"></register-patient>
-
-</div>
+<div class="container loginContainer">
+    <h3 class="title is-3">Patient Registration</h3>
+    <div class="column is-one-third is-offset-one-third">
+      <div class="box">
+        <!-- First Name -->
+        <div class="field inputContainer">
+          <label class="label">First Name</label>
+          <div class="control">
+            <input class="input" type="text" name="fistName">
+          </div>
+        </div>
+        <!-- Last Name -->
+        <div class="field inputContainer">
+          <label class="label">Last Name</label>
+          <div class="control">
+            <input class="input" type="text" name="lastName">
+          </div>
+        </div>
+        <!-- DOB-->
+        <div class="field inputContainer">
+          <label class="label">Date of Birth</label>
+          <div class="control">
+            <input class="input" type="text" name="dob" placeholder="YYYY-MM-DD">
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="field inputContainer">
+          <label class="label">Account Email</label>
+          <div class="control">
+            <input class="input" type="text" name="email">
+          </div>
+        </div>
+        <!-- Password -->
+        <div class="field inputContainer">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password">
+          </div>
+        </div>
+        <!-- Confirm Password -->
+        <div class="field inputContainer">
+          <label class="label">Confirm Password</label>
+          <div class="control">
+            <input class="input" type="password">
+          </div>
+        </div>
+        <a class="button is-primary buttonContainer">Register</a>
+      </div>
+    </div>
+  </div>

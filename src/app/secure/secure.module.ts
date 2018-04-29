@@ -14,8 +14,15 @@ import { PatientDetailComponent } from './patient-detail/patient-detail.componen
     SharedModule,
     ModalDialogModule,
     NgxSmartModalModule.forChild(),
-    
   ],
-  declarations: [SecureHomeComponent,HomeHeaderComponent, CreateTipComponent, PatientDetailComponent]
+  declarations: [
+    SecureHomeComponent,
+    HomeHeaderComponent,
+    CreateTipComponent,
+    PatientDetailComponent
+  ],
+  exports: [
+    HomeHeaderComponent
+  ]
 })
 export class SecureModule { }

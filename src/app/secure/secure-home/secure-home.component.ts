@@ -23,5 +23,4 @@ export class SecureHomeComponent implements OnInit {
     this.router.navigate(["/patient-detail"]);
   }
 
-  loginClick() {}
 }

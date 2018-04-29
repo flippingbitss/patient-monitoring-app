@@ -7,10 +7,10 @@ import { SecureModule } from "@app/secure/secure.module";
 @NgModule({
   imports: [
     CommonModule,
-    SecureModule
+    SecureModule,
+    HomeHeaderComponent
   ],
   declarations: [
-    HomeHeaderComponent,
     DashboardComponent
   ]
 })
