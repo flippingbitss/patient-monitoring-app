@@ -8,6 +8,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 import 'rxjs/add/observable/throw';
 import { tap } from "rxjs/operators";
+import {Response} from "@angular/http";
 import { Tip } from "@app/entities/Tip";
 
 const ROUTES = {
@@ -29,7 +30,6 @@ const httpOptions = {
 @Injectable()
 export class UserService {
   private KEY_USER = "key_user_pma";
-
   private API_BASE_URL = "https://pma-web-api.herokuapp.com/api/";
   // private API_BASE_URL = "http://localhost:3000/api/";
 
@@ -120,7 +120,7 @@ export class UserService {
 
   private handleErrorObservable(error: Response | any) {
     console.log(error.status, error.statusText,error);
-    
+
     return Observable.throw(error.error.message);
   }
 }

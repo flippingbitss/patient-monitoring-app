@@ -1,4 +1,5 @@
 export class Tip{
-  title: String;
-  message: String;
+  title: string;
+  message: string;
+  created: string;
 }
