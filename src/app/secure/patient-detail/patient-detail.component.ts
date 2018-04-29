@@ -15,6 +15,7 @@ import { NgxSmartModalService } from "ngx-smart-modal";
 export class PatientDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private formBuilder: FormBuilder,
     private userService: UserService,
     private modalService: NgxSmartModalService
@@ -60,5 +61,9 @@ export class PatientDetailComponent implements OnInit {
       this.modalService.closeLatestModal();
       this.fetchPatient(this.user.id);
     });
+  }
+
+  backToDashboard() {
+    this.router.navigate(["/secure-home"]);
   }
 }

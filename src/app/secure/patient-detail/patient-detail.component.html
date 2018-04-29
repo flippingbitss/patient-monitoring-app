@@ -68,7 +68,8 @@
   </form>
 </ngx-smart-modal>
 
-<label class="labelBack">Back to Dashboard</label>
+
+<label class="labelBack" (click)="backToDashboard()">Back to Dashboard</label>
 
 <div *ngIf="isLoading" class="columns is-centered">
   <div class="loader with-margin-20"></div>

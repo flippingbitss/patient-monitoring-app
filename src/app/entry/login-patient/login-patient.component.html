@@ -6,7 +6,7 @@
       <div class="field inputContainer">
         <label class="label">Account Email</label>
         <div class="control">
-          <input class="input" [ngClass]="{'is-danger': loginFormGroup.get('email').invalid}" type="text" name="email" required formControlName="email">
+          <input class="input"  type="text" name="email" required formControlName="email">
         </div>
       </div>
 
@@ -14,7 +14,7 @@
       <div class="field inputContainer">
         <label class="label">Password</label>
         <div class="control">
-          <input class="input" [ngClass]="{'is-danger': loginFormGroup.get('password').invalid && loginFormGroup.get('password').touched  }" type="password" required formControlName="password">
+          <input class="input" type="password" required formControlName="password">
         </div>
       </div>
       <button class="button is-primary buttonContainer" type="submit">Login</button>
